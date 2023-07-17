@@ -3,6 +3,19 @@
 <head>
   <title>Projetos do Castelo Branco</title>
   <style>
+
+    body {
+      position: relative;
+    }
+    
+    #cornerImage {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100px; /* Ajuste o tamanho da imagem conforme necessário */
+      height: 100px;
+    }
+
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -71,6 +84,9 @@
 
 </head>
 <body>
+  
+  <img id="cornerImage" src="caminho-para-a-imagem.jpg" alt="Descrição da imagem">
+  
   <input type="text" id="searchInput" onkeyup="searchProjects()" placeholder="Digite para buscar projetos">
   
   <h1>Projetos do Castelo Branco</h1>
