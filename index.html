@@ -8,12 +8,35 @@
       position: relative;
     }
 
+    .search-container {
+      position: absolute;
+      top: 20px; /* Ajuste a distância superior conforme necessário */
+      right: 20px; /* Ajuste a distância da margem direita conforme necessário */
+      text-align: right;
+    }
+
+    .search-label {
+      font-size: 16px;
+      font-weight: bold;
+    }
+
     .search-input {
-      width: 300px;
+      width: 250px; /* Ajuste a largura do campo de busca conforme necessário */
       padding: 10px;
       font-size: 16px;
       border: 2px solid #ccc;
       border-radius: 4px;
+    }
+
+    .search-button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
     }
 
     #cornerImage {
@@ -98,8 +121,14 @@
   
 <body>
 
+    <div class="search-container">
+    <h2 class="search-label">Encontre seus projetos em PDF:</h2>
+    <input type="text" class="search-input" placeholder="Digite o nome do projeto">
+    <button class="search-button">Buscar</button>
+  </div>
+
+  
   <img id="cornerImage" src="imagem_castelo.jpg" alt="imagem do Colégio Estadual Presidente Castelo Branco">  
-  <input type="text" id="searchInput" onkeyup="searchProjects()" placeholder="Digite para buscar projetos">  
   <h1>Projetos do Castelo Branco</h1>
   
   <ul>
