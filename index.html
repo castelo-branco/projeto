@@ -47,15 +47,35 @@
       text-decoration: underline;
     }
   </style>
+  <script>
+    function searchProjects() {
+      var input = document.getElementById('searchInput');
+      var filter = input.value.toUpperCase();
+      var projects = document.getElementsByClassName('project');
+
+      for (var i = 0; i < projects.length; i++) {
+        var project = projects[i];
+        var projectName = project.getElementsByTagName('h2')[0];
+        var projectText = projectName.textContent || projectName.innerText;
+
+        if (projectText.toUpperCase().indexOf(filter) > -1) {
+          project.style.display = '';
+        } else {
+          project.style.display = 'none';
+        }
+      }
+    }
+  </script>
 </head>
 <body>
-  <h1>Projetos em PDF</h1>
+  <h1>Projetos do Castelo Branco</h1>
 
   <ul>
     <li class="project">
-      <h2>Projeto 1</h2>
-      <p>Alunos: fulano, fulano e fulano </p>
-      <p>Ano: ?° </p>
+      <h2>Projeto: Nosso futuro começa aqui </h2>
+      <p>Alunos: Eduarda Cabral Martins, Ana Carolina Pereira Pinheiro, Bruna Karla Moura Cabral, Hudson Cláudio de Araújo Costa e Rafaela Oliveira Pereira </p>
+      <p>Ano: 2022 </p>
+      <p>Orientador: PROF. Mestre Raquel Lima Piccinini Nogueira </p>
       <p>Descrição: bláblá. </p>
       <a href="projetos/hudson.pdf" download>Baixar</a>
     </li>
