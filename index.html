@@ -48,24 +48,27 @@
     }
   </style>
   <script>
-    function searchProjects() {
-      var input = document.getElementById('searchInput');
-      var filter = input.value.toUpperCase();
-      var projects = document.getElementsByClassName('project');
+  function searchProjects() {
+    var input = document.getElementById('searchInput');
+    var filter = input.value.toUpperCase();
+    var projects = document.getElementsByClassName('project');
 
-      for (var i = 0; i < projects.length; i++) {
-        var project = projects[i];
-        var projectName = project.getElementsByTagName('h2')[0];
-        var projectText = projectName.textContent || projectName.innerText;
+    for (var i = 0; i < projects.length; i++) {
+      var project = projects[i];
+      var projectName = project.getElementsByTagName('h2')[0];
+      var projectText = projectName.textContent || projectName.innerText;
+      var projectDetails = project.getElementsByClassName('details')[0];
+      var projectDetailsText = projectDetails.textContent || projectDetails.innerText;
 
-        if (projectText.toUpperCase().indexOf(filter) > -1) {
-          project.style.display = '';
-        } else {
-          project.style.display = 'none';
-        }
+      if (projectText.toUpperCase().indexOf(filter) > -1 || projectDetailsText.toUpperCase().indexOf(filter) > -1) {
+        project.style.display = '';
+      } else {
+        project.style.display = 'none';
       }
     }
-  </script>
+  }
+</script>
+
 </head>
 <body>
   <input type="text" id="searchInput" onkeyup="searchProjects()" placeholder="Digite para buscar projetos">
