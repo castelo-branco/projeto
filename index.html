@@ -10,8 +10,8 @@
 
     .search-container {
       position: absolute;
-      top: 20px; /* Ajuste a distância superior conforme necessário */
-      right: 20px; /* Ajuste a distância da margem direita conforme necessário */
+      top: 20px;
+      right: 20px;
       text-align: right;
     }
 
@@ -21,7 +21,7 @@
     }
 
     .search-input {
-      width: 250px; /* Ajuste a largura do campo de busca conforme necessário */
+      width: 250px; 
       padding: 10px;
       font-size: 16px;
       border: 2px solid #ccc;
@@ -97,36 +97,32 @@
     }
   </style>
   <script>
-  function searchProjects() {
-    var input = document.getElementById('searchInput');
-    var filter = input.value.toUpperCase();
-    var projects = document.getElementsByClassName('project');
+    function searchProjects() {
+      var input = document.getElementById('searchInput');
+      var filter = input.value.toUpperCase();
+      var projects = document.querySelectorAll('.project, .first-project');
 
-    for (var i = 0; i < projects.length; i++) {
-      var project = projects[i];
-      var projectName = project.getElementsByTagName('h2')[0];
-      var projectText = projectName.textContent || projectName.innerText;
-      var projectDetails = project.getElementsByClassName('details')[0];
-      var projectDetailsText = projectDetails.textContent || projectDetails.innerText;
+      for (var i = 0; i < projects.length; i++) {
+        var project = projects[i];
+        var details = project.querySelector('.details').textContent.toUpperCase();
 
-      if (projectText.toUpperCase().indexOf(filter) > -1 || projectDetailsText.toUpperCase().indexOf(filter) > -1) {
-        project.style.display = '';
-      } else {
-        project.style.display = 'none';
+        if (details.indexOf(filter) > -1) {
+          project.style.display = '';
+        } else {
+          project.style.display = 'none';
+        }
       }
     }
-  }
-</script>
+  </script>
 </head>
   
 <body>
 
     <div class="search-container">
     <h2 class="search-label">Encontre seus projetos em PDF:</h2>
-    <input type="text" class="search-input" placeholder="Digite o nome do projeto">
+    <input type="text" id="searchInput" class="search-input" onkeyup="searchProjects()" placeholder="Digite o nome do projeto">
     <button class="search-button">Buscar</button>
   </div>
-
   
   <img id="cornerImage" src="imagem_castelo.jpg" alt="imagem do Colégio Estadual Presidente Castelo Branco">  
   <h1>Projetos do Castelo Branco</h1>
