@@ -2,13 +2,65 @@
 <html>
 <head>
   <title>Projetos em PDF</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    .project {
+      background-color: #f5f5f5;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .project h2 {
+      margin: 0;
+      font-size: 18px;
+    }
+
+    .project p {
+      margin: 0;
+    }
+
+    .project a {
+      color: #333;
+      text-decoration: none;
+    }
+
+    .project a:hover {
+      color: #000;
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
   <h1>Projetos em PDF</h1>
-  
+
   <ul>
-    <li><a href="projetos/hudson.pdf" download>Hudson</a></li>
+    <li class="project">
+      <h2>Projeto 1</h2>
+      <p>Descrição do Projeto Hudson(1).</p>
+      <p>Comentários sobre o Projeto (1).</p>
+      <a href="projetos/hudson.pdf" download>Baixar Projeto do Hudson (1)</a>
+    </li>
+
   </ul>
 </body>
 </html>
+
 
